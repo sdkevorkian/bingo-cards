@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import BingoCard from './component/bingoCard';
+import styled from 'styled-components';
+
+const Header = styled.header`
+  background: var(--brown);
+  padding: 1em;
+  color: var(--cream);
+  font-size: 1.25em;
+`;
+
+const Main=styled.main`
+  padding-top: 2em;
+  background: var(--cream);
+  min-height: 90vh;
+  text-align: center;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header className="container-fluid">Bingo</Header>
+      <Main className="container-fluid">
+        <div className="row">
+          <BingoCard />
+        </div>
+      </Main>
     </div>
   );
 }
