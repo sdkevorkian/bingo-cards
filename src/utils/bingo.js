@@ -10,9 +10,15 @@ export function generateBingoCard(){
     Object.keys(newCard).forEach(key => {
         while (newCard[key].length < 5) {
             if(key==="N" && newCard[key].length === 2){
-                newCard[key].push('free');
+                newCard[key].push({
+                    'number': 'free',
+                    'active': true
+                });
             }
-            let newN = RNGgenerator(key);
+            let newN = {
+                    'active': false,
+                    'number': RNGgenerator(key)
+                };
             if(newCard[key].indexOf(newN) < 0) {
                 newCard[key].push(newN)
             }

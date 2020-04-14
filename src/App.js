@@ -4,22 +4,24 @@ import styled from 'styled-components';
 
 const Header = styled.header`
   background: var(--brown);
-  padding: 1em;
+  padding: 0.5em;
   color: var(--cream);
-  font-size: 1.25em;
+  font-size: 2em;
+  font-family: 'Luckiest Guy', cursive;
 `;
 
 const Main=styled.main`
   padding-top: 2em;
-  background: var(--cream);
-  min-height: 90vh;
+  // background: var(--cream);
+  min-height: calc(100vh - 80px);
   text-align: center;
+  
 `;
 
 function App() {
   return (
     <div>
-      <Header className="container-fluid">Bingo</Header>
+      <Header className="container-fluid"><span className="letter">B</span>ingo</Header>
       <Main className="container-fluid">
         <div className="row">
           <BingoCard />
