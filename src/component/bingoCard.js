@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const Card = styled.div`
     text-align: center;
+    border:1px solid var(--brown);
     .col-2 {
         padding: 0;
     }
@@ -21,11 +22,11 @@ const Card = styled.div`
     }
     .bingoHeader {
         background: var(--cream);
-        color: var(--cream);
+        color: white;
         border-left: 0;
         border-right: 0;
         font-family: 'Luckiest Guy', cursive;
-        font-size: 1.5em;        
+        font-size: 1.75em;        
     }
     .bingoCol:first-child .bingoHeader{
         border-left: 1px solid var(--brown);
@@ -76,11 +77,11 @@ export default function BingoCard(){
     }
 
     return(
-        <div className="col">
-            <Card className="bingo-card row offset-2">
+        <div className="col no-gutters">
+            <Card className="bingo-card row row-cols-2 col-10 offset-1 no-gutters">
                 {
                     Object.keys(bingoCardGrid).map(key => (
-                        <div className="col-2 bingoCol" key={key + 'row'}>
+                        <div className="col bingoCol" key={key + 'row'}>
                             <div className="bingoHeader bingoSpace"><span className="letter">{key}</span></div>
                             {
                             bingoCardGrid[key].map((space,i)=> 
